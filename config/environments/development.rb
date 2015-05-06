@@ -31,4 +31,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.url2pdf_server_url = 'http://localhost:9393/generate_pdf'
+  config.url2pdf_api_key = '99eb62b0ccf684ebec82796f3bca0f2b'
 end

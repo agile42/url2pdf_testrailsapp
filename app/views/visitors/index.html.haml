@@ -1,0 +1,75 @@
+.row.well
+  %h1
+    PDF Options
+= form_tag testpdf_path do
+  .row.well
+    .col-xs-12.col-md-3
+      %label
+        %h4 Orientation
+      .radio
+        %label
+          %input{type: 'radio', name: 'orientation', value: 'portrait', checked: true}
+          Portrait
+        %label
+          %input{type: 'radio', name: 'orientation', value: 'landscape', checked: false}
+          Landscape
+    .col-xs-12.col-md-9
+      %label
+        %h4 Cover, header and footer
+      .checkbox
+        %label
+          = check_box_tag 'cover', 1, true
+          Include cover sheet
+          = link_to '[test cover]', testpdf_cover_url
+      .checkbox
+        %label
+          = check_box_tag 'header', 1, true
+          Include header
+          = link_to '[test header]', testpdf_header_url
+      .checkbox
+        %label
+          = check_box_tag 'footer', 1, true
+          Include footer
+          = link_to '[test footer]', testpdf_footer_url
+  .row.well
+    .col-xs-12
+      %label
+        %h4 Margins
+    .col-xs-12.col-md-3
+      %label
+        Top
+        = text_field_tag 'top', '0mm', class: 'form-control'
+    .col-xs-12.col-md-3
+      %label
+        Right
+        = text_field_tag 'right', '10mm', class: 'form-control'
+    .col-xs-12.col-md-3
+      %label
+        Bottom
+        = text_field_tag 'bottom', '0mm', class: 'form-control'
+    .col-xs-12.col-md-3
+      %label
+        Left
+        = text_field_tag 'left', '10mm', class: 'form-control'
+  .row.well
+    .col-xs-12.col-md-3
+      %label
+        %h4 Generation
+      .form-group
+        %label
+          = text_field_tag 'filename', 'test.pdf', class: 'form-control'
+    .col-xs-12.col-md-3
+      %label
+        %h4 Engine
+      .radio
+        %label
+          %input{type: 'radio', name: 'engine', value: 'wkhtmltopdf', checked: true}
+          wkhtmltopdf
+        %label
+          %input{type: 'radio', name: 'engine', value: 'phantomjs', checked: false}
+          phantomjs
+    .col-xs-12.col-md-3
+      %label
+      .form-actions
+        %button.btn.btn-primary
+          Generate PDF

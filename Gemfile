@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
-gem 'rails', '4.1.7'
+gem 'rails', '~> 4.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -14,6 +14,8 @@ gem 'haml-rails'
 gem 'mysql2'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'url2pdf_rails', '~> 0.0.3'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
